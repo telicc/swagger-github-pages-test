@@ -6,11 +6,6 @@ info:
   title: "TeleSync"
   contact:
     email: ""
-  license:
-    name: "Apache 2.0"
-    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "https://telicc.github.io/swagger-github-pages-test/#/"
-basePath: "/v2"
 tags:
 - name: "1"
   description: "1"
