@@ -1,41 +1,37 @@
 ---
 swagger: "2.0"
 info:
-  description: "This is a sample server Petstore server.  You can find out more about\
-    \ Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).\
-    \  For this sample, you can use the api key `special-key` to test the authorization\
-    \ filters."
+  description: "This is a sample server ."
   version: "1.0.5"
-  title: "Swagger Petstore"
-  termsOfService: "http://swagger.io/terms/"
+  title: "TeleSync"
   contact:
-    email: "apiteam@swagger.io"
+    email: ""
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "petstore.swagger.io"
+host: "https://telicc.github.io/swagger-github-pages-test/#/"
 basePath: "/v2"
 tags:
-- name: "pet"
-  description: "Everything about your Pets"
+- name: "1"
+  description: "1"
   externalDocs:
     description: "Find out more"
-    url: "http://swagger.io"
+    url: "https://telicc.github.io/swagger-github-pages-test/#/"
 - name: "store"
-  description: "Access to Petstore orders"
+  description: "Access to orders"
 - name: "user"
   description: "Operations about user"
   externalDocs:
     description: "Find out more about our store"
-    url: "http://swagger.io"
+    url: "https://telicc.github.io/swagger-github-pages-test/#/"
 schemes:
 - "https"
 - "http"
 paths:
-  /pet/{petId}/uploadImage:
+  /a/{a-id}/uploadImage:
     post:
       tags:
-      - "pet"
+      - "a"
       summary: "uploads an image"
       description: ""
       operationId: "uploadFile"
@@ -44,9 +40,9 @@ paths:
       produces:
       - "application/json"
       parameters:
-      - name: "petId"
+      - name: "aId"
         in: "path"
-        description: "ID of pet to update"
+        description: "ID of to update"
         required: true
         type: "integer"
         format: "int64"
@@ -66,16 +62,16 @@ paths:
           schema:
             $ref: "#/definitions/ApiResponse"
       security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
-  /pet:
+      - pppstore_auth:
+        - "write:as"
+        - "read:as"
+  /ppp:
     post:
       tags:
-      - "pet"
-      summary: "Add a new pet to the store"
+      - "a"
+      summary: "Add to the store"
       description: ""
-      operationId: "addPet"
+      operationId: "addP"
       consumes:
       - "application/json"
       - "application/xml"
@@ -85,23 +81,23 @@ paths:
       parameters:
       - in: "body"
         name: "body"
-        description: "Pet object that needs to be added to the store"
+        description: "P object that needs to be added to the store"
         required: true
         schema:
-          $ref: "#/definitions/Pet"
+          $ref: "#/definitions/Pa"
       responses:
         405:
           description: "Invalid input"
       security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
+      - pppstore_auth:
+        - "write:pa"
+        - "read:pa"
     put:
       tags:
-      - "pet"
-      summary: "Update an existing pet"
+      - "2"
+      summary: "Update"
       description: ""
-      operationId: "updatePet"
+      operationId: "updateP"
       consumes:
       - "application/json"
       - "application/xml"
@@ -111,28 +107,28 @@ paths:
       parameters:
       - in: "body"
         name: "body"
-        description: "Pet object that needs to be added to the store"
+        description: "object that needs to be added to the store"
         required: true
         schema:
-          $ref: "#/definitions/Pet"
+          $ref: "#/definitions/ppp"
       responses:
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Pet not found"
+          description: "ppp not found"
         405:
           description: "Validation exception"
       security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
-  /pet/findByStatus:
+      - pppstore_auth:
+        - "write:ppps"
+        - "read:ppps"
+  /ppp/findByStatus:
     get:
       tags:
-      - "pet"
-      summary: "Finds Pets by status"
+      - "ppp"
+      summary: "Finds ppps by status"
       description: "Multiple status values can be provided with comma separated strings"
-      operationId: "findPetsByStatus"
+      operationId: "findpppsByStatus"
       produces:
       - "application/json"
       - "application/xml"
@@ -156,21 +152,21 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/Pet"
+              $ref: "#/definitions/ppp"
         400:
           description: "Invalid status value"
       security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
-  /pet/findByTags:
+      - pppstore_auth:
+        - "write:ppps"
+        - "read:ppps"
+  /ppp/findByTags:
     get:
       tags:
-      - "pet"
-      summary: "Finds Pets by tags"
+      - "ppp"
+      summary: "Finds ppps by tags"
       description: "Multiple tags can be provided with comma separated strings. Use\
         \ tag1, tag2, tag3 for testing."
-      operationId: "findPetsByTags"
+      operationId: "findpppsByTags"
       produces:
       - "application/json"
       - "application/xml"
@@ -189,28 +185,28 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/Pet"
+              $ref: "#/definitions/ppp"
         400:
           description: "Invalid tag value"
       security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
+      - pppstore_auth:
+        - "write:ppps"
+        - "read:ppps"
       deprecated: true
-  /pet/{petId}:
+  /ppp/{pppId}:
     get:
       tags:
-      - "pet"
-      summary: "Find pet by ID"
-      description: "Returns a single pet"
-      operationId: "getPetById"
+      - "ppp"
+      summary: "Find ppp by ID"
+      description: "Returns a single ppp"
+      operationId: "getpppById"
       produces:
       - "application/json"
       - "application/xml"
       parameters:
-      - name: "petId"
+      - name: "pppId"
         in: "path"
-        description: "ID of pet to return"
+        description: "ID of ppp to return"
         required: true
         type: "integer"
         format: "int64"
@@ -218,54 +214,54 @@ paths:
         200:
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Pet"
+            $ref: "#/definitions/ppp"
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Pet not found"
+          description: "ppp not found"
       security:
       - api_key: []
     post:
       tags:
-      - "pet"
-      summary: "Updates a pet in the store with form data"
+      - "ppp"
+      summary: "Updates a ppp in the store with form data"
       description: ""
-      operationId: "updatePetWithForm"
+      operationId: "updatepppWithForm"
       consumes:
       - "application/x-www-form-urlencoded"
       produces:
       - "application/json"
       - "application/xml"
       parameters:
-      - name: "petId"
+      - name: "pppId"
         in: "path"
-        description: "ID of pet that needs to be updated"
+        description: "ID of ppp that needs to be updated"
         required: true
         type: "integer"
         format: "int64"
       - name: "name"
         in: "formData"
-        description: "Updated name of the pet"
+        description: "Updated name of the ppp"
         required: false
         type: "string"
       - name: "status"
         in: "formData"
-        description: "Updated status of the pet"
+        description: "Updated status of the ppp"
         required: false
         type: "string"
       responses:
         405:
           description: "Invalid input"
       security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
+      - pppstore_auth:
+        - "write:ppps"
+        - "read:ppps"
     delete:
       tags:
-      - "pet"
-      summary: "Deletes a pet"
+      - "ppp"
+      summary: "Deletes a ppp"
       description: ""
-      operationId: "deletePet"
+      operationId: "deleteppp"
       produces:
       - "application/json"
       - "application/xml"
@@ -274,9 +270,9 @@ paths:
         in: "header"
         required: false
         type: "string"
-      - name: "petId"
+      - name: "pppId"
         in: "path"
-        description: "Pet id to delete"
+        description: "ppp id to delete"
         required: true
         type: "integer"
         format: "int64"
@@ -284,16 +280,16 @@ paths:
         400:
           description: "Invalid ID supplied"
         404:
-          description: "Pet not found"
+          description: "ppp not found"
       security:
-      - petstore_auth:
-        - "write:pets"
-        - "read:pets"
+      - pppstore_auth:
+        - "write:ppps"
+        - "read:ppps"
   /store/order:
     post:
       tags:
       - "store"
-      summary: "Place an order for a pet"
+      summary: "Place an order for a ppp"
       description: ""
       operationId: "placeOrder"
       consumes:
@@ -304,7 +300,7 @@ paths:
       parameters:
       - in: "body"
         name: "body"
-        description: "order placed for purchasing the pet"
+        description: "order placed for purchasing the ppp"
         required: true
         schema:
           $ref: "#/definitions/Order"
@@ -329,7 +325,7 @@ paths:
       parameters:
       - name: "orderId"
         in: "path"
-        description: "ID of pet that needs to be fetched"
+        description: "ID of ppp that needs to be fetched"
         required: true
         type: "integer"
         maximum: 10
@@ -371,7 +367,7 @@ paths:
     get:
       tags:
       - "store"
-      summary: "Returns pet inventories by status"
+      summary: "Returns ppp inventories by status"
       description: "Returns a map of status codes to quantities"
       operationId: "getInventory"
       produces:
@@ -586,13 +582,13 @@ securityDefinitions:
     type: "apiKey"
     name: "api_key"
     in: "header"
-  petstore_auth:
+  pppstore_auth:
     type: "oauth2"
-    authorizationUrl: "https://petstore.swagger.io/oauth/authorize"
+    authorizationUrl: "https://pppstore.swagger.io/oauth/authorize"
     flow: "implicit"
     scopes:
-      read:pets: "read your pets"
-      write:pets: "modify pets in your account"
+      read:ppps: "read your ppps"
+      write:ppps: "modify ppps in your account"
 definitions:
   ApiResponse:
     type: "object"
@@ -614,7 +610,7 @@ definitions:
         type: "string"
     xml:
       name: "Category"
-  Pet:
+  ppp:
     type: "object"
     required:
     - "name"
@@ -646,13 +642,13 @@ definitions:
           $ref: "#/definitions/Tag"
       status:
         type: "string"
-        description: "pet status in the store"
+        description: "ppp status in the store"
         enum:
         - "available"
         - "pending"
         - "sold"
     xml:
-      name: "Pet"
+      name: "ppp"
   Tag:
     type: "object"
     properties:
@@ -669,7 +665,7 @@ definitions:
       id:
         type: "integer"
         format: "int64"
-      petId:
+      pppId:
         type: "integer"
         format: "int64"
       quantity:
@@ -714,5 +710,4 @@ definitions:
     xml:
       name: "User"
 externalDocs:
-  description: "Find out more about Swagger"
-  url: "http://swagger.io"
+  url: "https://telicc.github.io/swagger-github-pages-test/#/"
