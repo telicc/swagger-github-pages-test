@@ -1,0 +1,59 @@
+info:
+  title: APIFiddle Sample Definition
+  version: 0.0.0
+  description: Example workspace
+paths:
+  /validate-user:
+    post:
+      summary: test token
+      security:
+        - BearerCustom: []
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - data
+                properties:
+                  data:
+                    type: string
+                title: TestTokenOk
+          description: The user is valid
+        "401":
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - error
+                properties:
+                  error:
+                    type: string
+                title: TestTokenUnauthorized
+          description: Authentication is required to access the requested resource. The
+            client must include the appropriate credentials.
+      operationId: testToken
+openapi: 3.1.0
+components:
+  parameters:
+    Authorization:
+      in: header
+      name: Authorization
+      style: simple
+      schema:
+        enum:
+          - Bearer [token]
+        type: string
+      explode: false
+      required: true
+      description: ""
+      allowReserved: false
+  securitySchemes:
+    BearerCustom:
+      type: http
+      scheme: Bearer
+      description: "Auth: Authenticated requests contain a valid Token as part of the
+        `Authorization: Bearer <Token>` header."
+      bearerFormat: BearerJwt
